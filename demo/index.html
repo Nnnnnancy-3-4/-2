@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>剧本演绎 App - 交互 Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="top-bar">
+        <div class="brand">
+          <div class="logo">剧</div>
+          <div>
+            <div class="title">剧本演绎</div>
+            <div class="subtitle">互动玩法 Demo</div>
+          </div>
+        </div>
+        <button id="btn-cold-start" class="btn ghost">首启动演示</button>
+      </header>
+
+      <main class="content">
+        <section id="tab-home" class="tab active">
+          <div class="section">
+            <div class="section-header">
+              <h2>剧本推荐</h2>
+              <span class="pill">MVP 原创</span>
+            </div>
+            <div id="script-list" class="card-row"></div>
+          </div>
+
+          <div class="section">
+            <div class="section-header">
+              <h2>角色分类</h2>
+              <span class="pill">主角/反派/配角/群演</span>
+            </div>
+            <div id="role-categories" class="chip-row"></div>
+            <div id="role-list" class="card-grid"></div>
+          </div>
+        </section>
+
+        <section id="tab-theater" class="tab">
+          <div class="panel">
+            <h2>一键匹配角色</h2>
+            <p class="muted">优先注册偏好，无偏好则随机匹配</p>
+            <label class="checkbox">
+              <input id="toggle-network" type="checkbox" />
+              模拟网络异常
+            </label>
+            <button id="btn-match" class="btn primary">开始匹配</button>
+            <div id="match-status" class="match-status"></div>
+          </div>
+        </section>
+
+        <section id="tab-history" class="tab">
+          <div class="subtabs">
+            <button class="subtab active" data-history-tab="history">历史记录</button>
+            <button class="subtab" data-history-tab="recruit">招募板块</button>
+          </div>
+          <div id="history-list" class="history-list"></div>
+          <div id="recruit-list" class="recruit-list hidden"></div>
+        </section>
+
+        <section id="tab-messages" class="tab">
+          <div class="list">
+            <div class="list-item">
+              <div>
+                <div class="item-title">平台信息</div>
+                <div class="item-desc">活动、公告、系统通知</div>
+              </div>
+              <span class="badge">3</span>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="item-title">用户私信</div>
+                <div class="item-desc">新消息 1 条</div>
+              </div>
+              <span class="badge">1</span>
+            </div>
+            <div class="list-item">
+              <div>
+                <div class="item-title">剧本邀请</div>
+                <div class="item-desc">2 条邀请待处理</div>
+              </div>
+              <span class="badge">2</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="tab-me" class="tab">
+          <div class="profile-card">
+            <div class="avatar">我</div>
+            <div class="profile-info">
+              <div class="profile-name">玩家007</div>
+              <div class="profile-desc">偏好：悬疑 / 侦探</div>
+            </div>
+            <button class="btn vip">VIP</button>
+          </div>
+          <div class="list">
+            <div class="list-item">
+              <div class="item-title">偏好设置</div>
+              <div class="item-desc">悬疑 / 爱情 / 惊悚</div>
+            </div>
+            <div class="list-item">
+              <div class="item-title">黑名单列表</div>
+              <div class="item-desc">可解除拉黑</div>
+            </div>
+            <div class="list-item">
+              <div class="item-title">隐私与授权</div>
+              <div class="item-desc">可撤回权限</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <nav class="tab-bar">
+        <button class="tab-button active" data-tab="home">首页</button>
+        <button class="tab-button" data-tab="theater">剧场</button>
+        <button class="tab-button" data-tab="history">历史/招募</button>
+        <button class="tab-button" data-tab="messages">消息</button>
+        <button class="tab-button" data-tab="me">我的</button>
+      </nav>
+    </div>
+
+    <div id="modal-root"></div>
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
